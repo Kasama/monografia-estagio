@@ -1,0 +1,1 @@
+au BufWritePost *.tex Make!
