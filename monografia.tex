@@ -36,8 +36,8 @@
 
 \usepackage{parskip}
 \usepackage{longtable}
-\usepackage[toc]{glossaries}
-%\makeglossaries
+%\usepackage[toc]{glossaries}
+%\makeglossaries%
 
 \hypersetup{%
   colorlinks = true,
@@ -47,8 +47,10 @@
   urlcolor = black,
 }
 
-\usepackage[toc]{glossaries}
-%\makeglossaries
+\usepackage[toc,acronyms]{glossaries}
+\makeglossaries%
+
+\input glossary.tex
 
 \newcommand{\tituloMonografia}{Estágio em DevOps}
 
@@ -61,14 +63,6 @@
 \renewcommand*{\lstlistlistingname}{Lista de Listagens}
 
 \hyphenation{}
-
-% abbreviations: coloque em ordem alfabética
-\newacronym{bcc}{BCC}{Bacharelado em Ciências da Computação}
-\newacronym{cep}{CEP}{Código de Endereçamento Postal}
-\newacronym{icmc}{ICMC}{Instituto de Ciências Matemáticas e de Computação}
-\newacronym{sp}{SP}{São Paulo}
-\newacronym{usp}{USP}{Universidade de São Paulo}
-
 
 \begin{document}
 \pagenumbering{roman}
@@ -128,13 +122,9 @@
       \thispagestyle{plain}
       \setcounter{page}{1}
 
-      \chapter*{Dedicatória}
+      \input dedicatoria.tex
 
-      Dedico\ldots
-
-      \chapter*{Agradecimentos}
-
-      Agradeço\ldots
+      \input agradecimentos.tex
 
       %%%%%%%%%%%%%%%%%%%%%%%%%%
 

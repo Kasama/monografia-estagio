@@ -5,16 +5,16 @@
 %% The original source files were:
 %%
 %% classes.dtx  (with options: `book')
-%% 
+%%
 %% This is a generated file.
-%% 
+%%
 %% Copyright 1993 1994 1995 1996 1997 1998 1999
 %% The LaTeX3 Project and any individual authors listed elsewhere
 %% in this file.
-%% 
+%%
 %% This file is part of the LaTeX base system.
 %% -------------------------------------------
-%% 
+%%
 %% It may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.1
 %% of this license or (at your option) any later version.
@@ -22,11 +22,11 @@
 %%    http://www.latex-project.org/lppl.txt
 %% and version 1.1 or later is part of all distributions of LaTeX
 %% version 1999/06/01 or later.
-%% 
+%%
 %% The list of all files belonging to the LaTeX base distribution is
 %% given in the file `manifest.txt'. See also `legal.txt' for additional
 %% information.
-%% 
+%%
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -173,7 +173,7 @@ ICMC document class]
         ##1}}}}
 \fi
 % Adenilso e Auri 07-12-00
-\gdef\@advisor{} 
+\gdef\@advisor{}
 \gdef\@address{}
 \gdef\@titulation{}
 \newcommand\titulation[1]{\gdef\@titulation{#1}}
@@ -188,7 +188,7 @@ ICMC document class]
     \let\chaptermark\@gobble
     \let\sectionmark\@gobble
     }
-\newcommand\advisorname{Orientador} 
+\newcommand\advisorname{Orientador}
 \def\maketitle{
   \pagestyle{empty}
   \begin{titlepage}%
