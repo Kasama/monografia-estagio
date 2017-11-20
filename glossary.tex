@@ -5,6 +5,7 @@
 \newacronym{CEP}{CEP}{Código de Endereçamento Postal}
 \newacronym{EC2}{EC2}{Elastic Compute Cloud}
 \newacronym{ECS}{ECS}{\gls{EC2} Container Service}
+\newacronym{HTTP}{HTTP}{Hypertext Transfer Protocol}
 \newacronym{ICMC}{ICMC}{Instituto de Ciências Matemáticas e de Computação}
 \newacronym{IO}{E/S}{Entrada e Saída}
 \newacronym{LXC}{LXC}{Linux Containers}
@@ -13,6 +14,7 @@
 \newacronym{SP}{SP}{São Paulo}
 \newacronym{TI}{TI}{Tecnologia da Informação}
 \newacronym{USP}{USP}{Universidade de São Paulo}
+\newacronym{scheduler}{Scheduler}{Serviço de Agendamento}
 
 \newglossaryentry{Docker}
 {
@@ -26,6 +28,15 @@
   name=container,
   plural=containers,
   description={\gls{LXC} é uma camada de virtualização no nível de \gls{SO} que permite a execução de múltiplos ambientes isolados no mesmo \gls{Kernel}
+  }
+}
+
+\newglossaryentry{cluster swarm}
+{
+  name=cluster swarm,
+  plural=clusters swarm,
+  description={
+    \gls{Docker} swarm é uma ferramenta que permite a execução de \glspl{container} em máquinas diferentes de forma orquestrada.
   }
 }
 
@@ -98,5 +109,68 @@
   plural=Testes AB,
   description={
     Teste AB é um teste com o objetivo de medir métricas sobre uma mudança na plataforma, comparando-a com as métricas da plataforma antiga. O teste divide uma porcentagem dos usuários para cada hipótese e mede um objetivo para saber qual das hipóteses tem uma melhor performance para a audiência.
+  }
+}
+
+\newglossaryentry{checkstyle}
+{
+  name=checkstyle,
+  plural=checkstyles,
+  description={
+    Checkstyle é uma ferramenta de análise estática de código, que permite verificar regras de estilo de código para garantir consistência no código de um time
+  }
+}
+
+\newglossaryentry{SCRUM}
+{
+  name=SCRUM,
+  plural=SCRUM,
+  description={
+    SCRUM é uma metodologia ágil que tem como foco times de desenvolvimento de software entre três e nove membros que organizam suas tarefas em ciclos de duração fixa, chamados sprints.
+  }
+}
+
+\newglossaryentry{javascript}
+{
+  name=javascript,
+  plural=javascript,
+  description={
+    Javascript é uma linguagem de programação dinâmica focada no desenvolvimento web \gls{frontend}, apesar de ser utilizada em muitos outros cenários. Ela é desde 1996 a linguagem padrão nos navegadores web.
+  }
+}
+
+\newglossaryentry{Vue}
+{
+  name=Vue JS,
+  plural=Vue JS,
+  description={
+    Vue JS é um \gls{framework} para desenvolvimento \gls{frontend} baseado no conceito de componentes reutilizáveis.
+  }
+}
+
+\newglossaryentry{Node}
+{
+  name=Node JS,
+  plural=Node JS,
+  description={
+    Node JS é uma plataforma de execução de \gls{javascript} no \gls{backend}, baseada no motor de \gls{javascript} do navegador Google Chrome.
+  }
+}
+
+\newglossaryentry{PHP}
+{
+  name=PHP,
+  plural=PHP,
+  description={
+    PHP é uma linguagem de programação de propósito geral, focada no desenvolvimento web.
+  }
+}
+
+\newglossaryentry{cookie}
+{
+  name=cookie,
+  plural=cookies,
+  description={
+   Um cookie é uma quantidade pequena de dados enviados de um servidor para ser armazenado pelo usuário, os cookies geralmente são usados para identificar um usuário entre vários pedidos \gls{HTTP}, já que o protocolo não prevê armazenamento de estado entre requisições.
   }
 }

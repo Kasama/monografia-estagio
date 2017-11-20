@@ -10,11 +10,13 @@ O planejamento inicial do estágio incluiu a automação de geração de relató
 
 % Você pode fazer uso de tabelas, por exemplo para sumarizar o cronograma de atividades planejados. Quando você usar uma tabela (ou figura, ou quadro, ou listagem), é obrigatório fazer referência a ela quando seu conteúdo é explicado no texto, como por exemplo: ver Tabela~\ref{tab:tab1}.
 
-Nas primeiras semanas do estágio, foram planejadas atividades de familiarização com a arquitetura existente e desenvolvimento de um novo serviço de agendamento de processos e scripts.
+Nas primeiras semanas do estágio, foram planejadas atividades de familiarização com a arquitetura existente e desenvolvimento de um novo \gls{scheduler} de processos e scripts.\\
 
-Nas semanas seguintes foram planejadas atividades de integração, nas quais foi usado o sistema \gls{Jenkins} em conjunto com \gls{EC2} do \gls{AWS} e também atividades de manutenção, como backups do banco de dados da plataforma e do blog da empresa usando o serviço de agendamento criado previamente.
+Nas semanas seguintes foram planejadas atividades de integração, nas quais foi usado o sistema \gls{Jenkins} em conjunto com \gls{EC2} do \gls{AWS} e também atividades de geração de relatórios e manutenção da plataforma, como backups da base de dados e o blog da empresa usando o \gls{scheduler} criado previamente.\\
 
-\begin{table}[h!]
+Na tabela \ref{tab:tabPlan}, está ilustrado o cronograma de atividades planejadas em ordem cronológica.\\
+
+\begin{table}[H]
 \begin{center}
 \caption[Atividades Planejadas]
 {Atividades Planejadas}\label{tab:tabPlan}
@@ -24,20 +26,17 @@ Nas semanas seguintes foram planejadas atividades de integração, nas quais foi
 \hline
 \textbf{Início}    & \textbf{Fim} &  \textbf{Descrição}                             \\
 \hline
-31/07/2017        & 10/08/2017                & Implementação do Scheduler\\
-16/08/2017        & 31/08/2017                & Implementação de \gls{OAuth2} no \gls{backend}\\
-04/09/2017        & 07/09/2017                & Implementação de \gls{OAuth2} no \gls{frontend}\\
-11/09/2017        & 19/09/2017                & Ferias: Hackathon Hack The North\\
-20/09/2017        & 28/09/2017                & Automatização da geração de relatórios\\
-02/10/2017        & 05/10/2017                & \gls{POC} do \gls{Teste AB} da plataforma\\
-09/10/2017        & 19/10/2017                & Implementação do \gls{Teste AB}\\
-
-% 10/08/2017       & 23/08/2017                & Atividade 1: Autenticação \\
-% 10/08/2017       & 25/08/2017                & Atividade 1: Autenticação \\
-% 15/02/2017       & 28/02/2017                & Atividade 2: Treinamento\\
-% 01/03/2017       & 30/03/2017                & Atividade 3: Projeto\\
-% 01/03/2017       & 30/03/2017                & Atividade 4: Desenvolvimento\\
-% 01/04/2017       & 30/04/2017                & Atividade 5: Avaliação\\
+31/07/2017        & 10/08/2017      & Implementação do \gls{scheduler}\\
+16/08/2017        & 31/08/2017      & Implementação de \gls{OAuth2} no \gls{backend}\\
+04/09/2017        & 07/09/2017      & Implementação de \gls{OAuth2} no \gls{frontend}\\
+% 11/09/2017        & 19/09/2017      & Ferias: Hackathon Hack The North\\
+20/09/2017        & 28/09/2017      & Automatização da geração de relatórios\\
+02/10/2017        & 05/10/2017      & \gls{POC} do \gls{Teste AB} da plataforma\\
+09/10/2017        & 19/10/2017      & Implementação do \gls{Teste AB}\\
+23/10/2017        & 25/10/2017      & Automatização do backup do blog\\
+23/10/2017        & 01/11/2017      & Automatização de testes e \gls{checkstyle} com \gls{Jenkins}\\
+06/11/2017        & 09/11/2017      & Automatização do backup da base de dados de produção\\
+13/11/2017        & 16/11/2017      & Automatização do build de imagens do sistema\\
 \hline
 
 \hline
@@ -47,25 +46,28 @@ Nas semanas seguintes foram planejadas atividades de integração, nas quais foi
 
 \section{Treinamentos planejados para o estágio}
 
-Discorra sobre treinamentos previstos quando do início do estágio.
+Não houve um planejamento de treinamentos específicos, todo o treinamento foi dado conforme necessário para realizar as tarefas.\\
 
-Quando citar os treinamentos planejados, a duração de cada um pode ser apresentada em uma tabela, como ilustrado na Tabela~\ref{tab:tab2}.
-
-\begin{table}[!ht]
-\begin{center}
-\caption[Treinamentos Planejados]
-{Treinamentos Planejados}\label{tab:tab2}
-
-\begin{tabular}{llp{7cm}}
-\hline
-
-\hline
-\textbf{Início}    & \textbf{Fim} &  \textbf{Descrição}                             \\
-\hline
-01/02/2014       & 15/02/2014                & Treinamento em Ruby on Rails \\
-15/02/2014       & 28/02/2014                & Treinamento em SOA\\
-
-\hline
-\end{tabular}
-\end{center}
-\end{table}
+%
+% Discorra sobre treinamentos previstos quando do início do estágio.
+%
+% Quando citar os treinamentos planejados, a duração de cada um pode ser apresentada em uma tabela, como ilustrado na Tabela~\ref{tab:tab2}.
+%
+% \begin{table}[!ht]
+% \begin{center}
+% \caption[Treinamentos Planejados]
+% {Treinamentos Planejados}\label{tab:tab2}
+%
+% \begin{tabular}{llp{7cm}}
+% \hline
+%
+% \hline
+% \textbf{Início}    & \textbf{Fim} &  \textbf{Descrição}                             \\
+% \hline
+% 01/02/2014       & 15/02/2014                & Treinamento em Ruby on Rails \\
+% 15/02/2014       & 28/02/2014                & Treinamento em SOA\\
+%
+% \hline
+% \end{tabular}
+% \end{center}
+% \end{table}
