@@ -6,6 +6,8 @@
 
 Nas primeiras semanas de trabalho foi dada uma tarefa de implementação de um \gls{scheduler}, com uma interface para agendamento de scripts, como mostrada na Figura~\ref{fig:scheduler}. O \gls{scheduler} foi criado para funcionar dentro de um \gls{container} \gls{Docker}, no qual é possível controlar o estado de outros \glspl{container} sendo executados no mesmo sistema (ou \gls{cluster swarm}).\\
 
+Esse \gls{scheduler} foi amplamente utilizado em tarefas futuras, para automação de processos recorrentes.\\
+
 O \gls{scheduler} tem código aberto e está disponível em \url{https://github.com/casa-e-cafe/docker-scheduler}\\
 
 \begin{figure}[h]
@@ -16,11 +18,11 @@ O \gls{scheduler} tem código aberto e está disponível em \url{https://github.
   \rule[1ex]{\textwidth}{0.25pt}
 \end{figure}
 
-Enquanto essa tarefa era desenvolvida, foram explicadas partes da arquitetura e organização da plataforma nas reuniões diárias do \gls{SCRUM}, \\
+Enquanto essa tarefa era desenvolvida, foram explicadas partes da arquitetura e organização da plataforma nas reuniões diárias do \gls{SCRUM}. Também ocorriam momentos nos quais eram ensinados procedimentos de uso do \gls{AWS}, principalmente do \gls{EC2} e \gls{S3}, esses momentos foram de suma importância para a realização de tarefas futuras, pois a \nomeEmpresa~utiliza serviços do \gls{AWS} para a maior parte da aplicação.\\
 
 A segunda grande tarefa realizada foi a implementação do \gls{OAuth2} no \gls{backend} e \gls{frontend}. Em ambos os casos o desenvolvimento foi realizado em conjunto com outro membro mais experiente do time, de forma pareada, afim de promover a familiarização com o código e arquitetura existente.\\
 
-Após esse período de familiarização, começaram a ser atribuídas tarefas da área de \gls{ops}. A primeira se resumiu a usar o \gls{scheduler} para automatizar a geração de relatórios de uso da plataforma, que antes eram gerados de forma manual semanalmente.\\
+Após esse período de familiarização, começaram a ser atribuídas tarefas da área de \gls{ops}. A primeira se resumiu a usar o \gls{scheduler} para automatizar a geração de relatórios de uso da plataforma, que antes eram gerados de forma manual semanalmente. Foi para o armazenamento dos relatórios, foi utilizado o \gls{S3}.\\
 
 Outra importante tarefa na área de \gls{ops} foi a implementação do \gls{Teste AB}, dividida em duas etapas. Primeiramente houve uma \gls{POC} para entender possíveis ferramentas que poderiam ser usadas. Foi decidido que o \gls{Teste AB} seria implementado diretamente em \gls{PHP} no código da aplicação, permitindo controle de separação por porcentagem de acessos e múltiplas variações para o teste.\\
 
@@ -50,7 +52,17 @@ if ($existing_cookie) {
 
 Após a implementação do \gls{Teste AB}, foi iniciada a implantação do sistema de build e testes \gls{Jenkins} para que houvesse a automatização dos testes programáticos e \gls{checkstyle}, assim como geração de imagens \gls{Docker} do projeto. Com objetivo de atingir \gls{CD}\\
 
-O planejamento inicial incluiu apenas a execução de testes e verificação de \gls{checkstyle}, para todas as tecnologias usadas no produto: \gls{PHP}, \gls{Node} e \gls{Vue}.\\
+O planejamento inicial incluiu apenas a execução de testes e verificação de \gls{checkstyle}, para todas as tecnologias usadas no produto: \gls{PHP}, \gls{Node} e \gls{Vue}. A Figura~\ref{fig:jenkinsBuild} mostra o exemplo de uma build realizada com o \gls{Jenkins}\\
+
+\begin{figure}[h]
+  \rule[1ex]{\textwidth}{0.25pt}
+  \centering\includegraphics[width=0.70\textwidth]{img/JenkinsBuild.png}
+  \caption[Jenkins Build]
+  {Jenkins Build}\label{fig:jenkinsBuild}
+  \rule[1ex]{\textwidth}{0.25pt}
+\end{figure}
+
+Foram realizadas duas tarefas grandes de \gls{backup}, uma do blog da empresa e outra dos dados da base de produção. Em ambos os casos foi escolhido usa o \gls{S3} para armazenamento dos dados copiados, principalmente pelo baixo custo e facilidade de uso.\\
 
 
 % Descreva quais atividades foram realizadas durante o projeto.
@@ -85,8 +97,9 @@ O planejamento inicial incluiu apenas a execução de testes e verificação de 
 
 \section{Problemas resolvidos}
 
-Descreva quais problemas foram resolvidos.
+Os principais problemas que foram resolvidos na duração do estágio foram principalmente relacionados a automatização de procedimentos.\\
 
+A implementação do \gls{scheduler} facilitou a realização de muitas tarefas, permitindo o agendamento de atividades recorrentes com facilidade. Com ele foi possível solucionar o problema de geração manual de relatórios toda a semana, permitindo que não fosse necessário executar vários scripts manualmente. Também foi possível, com o \gls{scheduler}, realizar \glspl{backup} diários sem o custo de alocar uma pessoa para essa tarefa.\\
 
 \section{Técnicas, métodos e tecnologias envolvidas}
 

@@ -47,8 +47,9 @@
   urlcolor = black,
 }
 
-\usepackage[toc,acronyms]{glossaries}
+\usepackage[toc,acronyms,xindy]{glossaries}
 \makeglossaries%
+%\makenoidxglossaries%
 
 \input glossary.tex
 
@@ -133,8 +134,9 @@
       \tableofcontents
       \listoffigures
       \listoftables
-      \lstlistoflistings%
+      \lstlistoflistings
       \printglossary[title=Lista de Termos,toctitle=Termos e Abreviaturas]
+      %\printnoidxglossary[]%
 
       \onehalfspacing%
 
