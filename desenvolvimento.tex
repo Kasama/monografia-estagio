@@ -113,6 +113,14 @@ Outra solução importante gerada a partir do trabalho realizado foi a possibili
 
 \section{Técnicas, métodos e tecnologias envolvidas}
 
+Durante todo o período do estágio, foi utilizada metodologia de desenvolvimento \gls{SCRUM}. Os primeiros sprints tiveram duração de uma semana em um time com 5 desenvolvedores e um \gls{SCRUM} Master, que ocasionalmente realizava tarefas do sprint. Após um tempo o time decidiu adotar sprints de duas semanas, mas foi retomada a duração inicial após três sprints. Para a organização do time, são utilizadas ferramentas como \href{https://trello.com/}{Trello} para organização de tarefas, \href{https://slack.com/}{Slack} para comunicação dentro do time e \href{https://www.nuclino.com/}{Nuclino} para documentação.\\
+
+Para a infraestrutura, são usados vários serviços da \href{https://aws.amazon.com/}{\gls{AWS}}, como \href{https://aws.amazon.com/ec2/}{\gls{EC2}} para hospedagem dos serviços, \href{https://aws.amazon.com/ecr/}{\gls{ECR}} para hospedagem de imagens \gls{Docker}, \href{https://aws.amazon.com/cloudwatch/}{Cloud Watch} para monitoramento de eventos em produção e \href{https://aws.amazon.com/s3/}{\gls{S3}} para armazenamento de relatórios e backups. Também são usados vários outros serviços não ligados a Amazon, como \href{https://www.hostgator.com.br/}{Hostgator} para hospedagem da plataforma legada e \href{https://www.cloudflare.com/br/}{Cloud Flare} para gerenciamento de \gls{DNS}.\\
+
+As tecnologias envolvidas na plataforma podem ser separadas em três categorias. A primeira são as tecnologias de \gls{frontend}, que incluem \gls{HTML}, \gls{CSS} e \gls{javascript} com \gls{Vue}. No \gls{backend} são usadas as linguagens de programação \gls{PHP} com \href{https://codeigniter.com/}{CodeIgniter} e \href{https://silex.symfony.com/}{Silex} e \gls{javascript} com \gls{Node}. Na terceira categoria se encaixam tecnologias de apoio e infraestrutura, como \href{https://www.docker.com/}{\gls{Docker}} para a execução dos processos em \glspl{container}, \href{https://www.mongodb.com/}{Mongo DB} e \href{https://www.mysql.com/}{MySql} para as bases de dados, \href{https://docs.docker.com/docker-for-aws/}{\gls{Docker} for \gls{AWS}} para a integração com as máquinas da \gls{EC2}, \href{https://traefik.io/}{Træfik} para gerenciamento de trafego nos ambientes de teste e \href{https://analytics.google.com/analytics/}{Google Analytics} para medir métricas da plataforma\\
+
+Para o desenvolvimento de novas funcionalidades, é utilizado o método \gls{TDD}, que visa a criação de testes da aplicação antes de iniciar o desenvolvimento de uma nova funcionalidade. Com testes unitários é possível facilitar o desenvolvimento, por diminuir o tempo de teste.
+
 % Descreva os métodos, técnicas  e tecnologias
 % envolvidos  ou que  foram utilizados  para a  condução das  atividades
 % durante  o estágio.  Por exemplo:  (i)  no caso  dos métodos,  pode-se
