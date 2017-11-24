@@ -24,7 +24,7 @@ A segunda grande tarefa realizada foi a implementação do \gls{OAuth2} no \gls{
 
 Após esse período de familiarização, começaram a ser atribuídas tarefas da área de \gls{ops}. A primeira se resumiu a usar o \gls{scheduler} para automatizar a geração de relatórios de uso da plataforma, que antes eram gerados de forma manual semanalmente. Foi para o armazenamento dos relatórios, foi utilizado o \gls{S3}.\\
 
-Outra importante tarefa na área de \gls{ops} foi a implementação do \gls{Teste AB}, dividida em duas etapas. Primeiramente houve uma \gls{POC} para entender possíveis ferramentas que poderiam ser usadas. Foi decidido que o \gls{Teste AB} seria implementado diretamente em \gls{PHP} no código da aplicação, permitindo controle de separação por porcentagem de acessos e múltiplas variações para o teste.\\
+Outra importante tarefa na área de \gls{ops} foi a implementação do \gls{Teste AB}. Tal teste tem como objetivo medir a taxa de conversão da versão antiga da platforma comparada com a versão nova. A implementação ocorreu em duas etapas. Primeiramente houve uma \gls{POC} para entender ferramentas que poderiam ser usadas. Depois ocorreu a implementação do código em si. foi decidido que o \gls{Teste AB} seria implementado diretamente em \gls{PHP} no código da aplicação antiga, permitindo controle de separação por porcentagem de acessos e múltiplas variações para o teste.\\
 
 O código na Listagem~\ref{src:abtest} ilustra a parte principal da implementação, que verifica se a requisição \gls{HTTP} possui um \gls{cookie} de identificação do teste, ou se é necessário gerar um novo baseado nas variações e probabilidades configuradas\\
 
