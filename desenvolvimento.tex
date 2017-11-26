@@ -6,7 +6,7 @@
 
 Nas primeiras semanas de trabalho foi dada uma tarefa de implementação de um \gls{scheduler}, com uma interface para agendamento de scripts usando a sintaxe de \gls{cronjob}, como mostrada na Figura~\ref{fig:scheduler}. O \gls{scheduler} foi criado para funcionar dentro de um \gls{container} \gls{Docker}, no qual é possível controlar o estado de outros \glspl{container} sendo executados no mesmo sistema (ou \gls{cluster swarm}).\\
 
-Para o uso na empresa, o \gls{scheduler} foi colocado em uma máquina virtual da \gls{EC2}, a partir da qual é possível uma comunicação segura com outras instâncias na \gls{EC2}, permitindo a execução de serviços sensíveis sem a necessidade de abertura dos canais de comunicação do servidor de produção para o mundo externo.
+Para o uso na empresa, o \gls{scheduler} foi colocado em uma máquina virtual da \gls{EC2}, a partir da qual é possível uma comunicação segura com outras instâncias na \gls{EC2}, permitindo a execução de serviços sensíveis sem a necessidade de abertura dos canais de comunicação do servidor de produção para o mundo externo.\\
 
 Esse \gls{scheduler} foi amplamente utilizado em tarefas futuras, para automação de processos recorrentes.\\
 
@@ -103,7 +103,7 @@ Os principais problemas que foram resolvidos na duração do estágio foram prin
 
 A implementação do \gls{scheduler} facilitou a realização de muitas tarefas, permitindo o agendamento de atividades recorrentes com facilidade. Com ele foi possível solucionar o problema de geração manual de relatórios toda a semana, permitindo que não fosse necessário executar vários scripts manualmente. Também foi possível, com o \gls{scheduler}, realizar \glspl{backup} diários sem o custo de alocar uma pessoa para essa tarefa.\\
 
-Outra solução importante gerada a partir do trabalho realizado foi a possibilidade de verificar resultados de testes automatizados e \gls{checkstyle} na interface do \gls{Jenkins}. Na Figura~\ref{fig:jenkinsCheckstyle} é possível ver um dos gráficos gerados pelo sistema. No eixo horizontal podemos ver o número da build e no vertical a quantidade de avisos de alta prioridade (em vermelho) e baixa prioridade (em amarelo) de \gls{checkstyle}. É possível notar que houve uma diminuição grande na quantidade de avisos com o tempo.
+Outra solução importante gerada a partir do trabalho realizado foi a possibilidade de verificar resultados de testes automatizados e \gls{checkstyle} na interface do \gls{Jenkins}. Na Figura~\ref{fig:jenkinsCheckstyle} é possível ver um dos gráficos gerados pelo sistema. No eixo horizontal podemos ver o número da build e no vertical a quantidade de avisos de alta prioridade (em vermelho) e baixa prioridade (em amarelo) de \gls{checkstyle}. É possível notar que houve uma diminuição grande na quantidade de avisos com o tempo.\\
 
 \begin{figure}[h]
   \rule[1ex]{\textwidth}{0.25pt}
@@ -121,7 +121,7 @@ Para a infraestrutura, são usados vários serviços da \href{https://aws.amazon
 
 As tecnologias envolvidas na plataforma podem ser separadas em três categorias. A primeira são as tecnologias de \gls{frontend}, que incluem \gls{HTML}, \gls{CSS} e \gls{javascript} com \gls{Vue}. No \gls{backend} são usadas as linguagens de programação \gls{PHP} com \href{https://codeigniter.com/}{CodeIgniter} e \href{https://silex.symfony.com/}{Silex} e \gls{javascript} com \gls{Node}. Na terceira categoria se encaixam tecnologias de apoio e infraestrutura, como \href{https://www.docker.com/}{\gls{Docker}} para a execução dos processos em \glspl{container}, \href{https://www.mongodb.com/}{Mongo DB} e \href{https://www.mysql.com/}{MySql} para as bases de dados, \href{https://docs.docker.com/docker-for-aws/}{\gls{Docker} for \gls{AWS}} para a integração com as máquinas da \gls{EC2}, \href{https://traefik.io/}{Træfik} para gerenciamento de trafego nos ambientes de teste e \href{https://analytics.google.com/analytics/}{Google Analytics} para medir métricas da plataforma\\
 
-Para o desenvolvimento de novas funcionalidades, é utilizado o método \gls{TDD}, que visa a criação de testes da aplicação antes de iniciar o desenvolvimento de uma nova funcionalidade. Com testes unitários é possível facilitar o desenvolvimento, por diminuir o tempo de teste.
+Para o desenvolvimento de novas funcionalidades, é utilizado o método \gls{TDD}, que visa a criação de testes da aplicação antes de iniciar o desenvolvimento de uma nova funcionalidade. Com testes unitários é possível facilitar o desenvolvimento, por diminuir o tempo de teste.\\
 
 % Descreva os métodos, técnicas  e tecnologias
 % envolvidos  ou que  foram utilizados  para a  condução das  atividades
@@ -164,4 +164,4 @@ Os clientes também foram afetados diretamente em algumas situações, como no c
 
 Das tarefas planejadas para o estágio, poucas não puderam ser desenvolvidas. Uma delas diz respeito ao sistema de build \gls{Jenkins}. Não foi possível adicionar informações de cada build no GitLab, o que facilitaria na visualização das falhas de testes ou \gls{checkstyle}, sem a necessidade de entrar na interface do \gls{Jenkins}.\\
 
-Algumas atividades que estavam originalmente no cronograma, como a alteração da arquitetura para utilizar um padrão orientado a eventos, não foram possíveis de serem realizadas por conta de outras tarefas terem uma prioridade mais elevada.
+Algumas atividades que estavam originalmente no cronograma, como a alteração da arquitetura para utilizar um padrão orientado a eventos, não foram possíveis de serem realizadas por conta de outras tarefas terem uma prioridade mais elevada.\\
