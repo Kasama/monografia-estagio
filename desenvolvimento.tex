@@ -4,7 +4,9 @@
 
 \section{Atividades Realizadas}
 
-Nas primeiras semanas de trabalho foi dada uma tarefa de implementação de um \gls{scheduler}, com uma interface para agendamento de scripts, como mostrada na Figura~\ref{fig:scheduler}. O \gls{scheduler} foi criado para funcionar dentro de um \gls{container} \gls{Docker}, no qual é possível controlar o estado de outros \glspl{container} sendo executados no mesmo sistema (ou \gls{cluster swarm}).\\
+Nas primeiras semanas de trabalho foi dada uma tarefa de implementação de um \gls{scheduler}, com uma interface para agendamento de scripts usando a sintaxe de \gls{cronjob}, como mostrada na Figura~\ref{fig:scheduler}. O \gls{scheduler} foi criado para funcionar dentro de um \gls{container} \gls{Docker}, no qual é possível controlar o estado de outros \glspl{container} sendo executados no mesmo sistema (ou \gls{cluster swarm}).\\
+
+Para o uso na empresa, o \gls{scheduler} foi colocado em uma máquina virtual da \gls{EC2}, a partir da qual é possível uma comunicação segura com outras instâncias na \gls{EC2}, permitindo a execução de serviços sensíveis sem a necessidade de abertura dos canais de comunicação do servidor de produção para o mundo externo.
 
 Esse \gls{scheduler} foi amplamente utilizado em tarefas futuras, para automação de processos recorrentes.\\
 
@@ -24,7 +26,7 @@ A segunda grande tarefa realizada foi a implementação do \gls{OAuth2} no \gls{
 
 Após esse período de familiarização, começaram a ser atribuídas tarefas da área de \gls{ops}. A primeira se resumiu a usar o \gls{scheduler} para automatizar a geração de relatórios de uso da plataforma, que antes eram gerados de forma manual semanalmente. Foi para o armazenamento dos relatórios, foi utilizado o \gls{S3}.\\
 
-Outra importante tarefa na área de \gls{ops} foi a implementação do \gls{Teste AB}. Tal teste tem como objetivo medir a taxa de conversão da versão antiga da platforma comparada com a versão nova. A implementação ocorreu em duas etapas. Primeiramente houve uma \gls{POC} para entender ferramentas que poderiam ser usadas. Depois ocorreu a implementação do código em si. foi decidido que o \gls{Teste AB} seria implementado diretamente em \gls{PHP} no código da aplicação antiga, permitindo controle de separação por porcentagem de acessos e múltiplas variações para o teste.\\
+Outra importante tarefa na área de \gls{ops} foi a implementação do \gls{Teste AB}. Tal teste tem como objetivo medir a taxa de conversão da versão antiga da platforma comparada com a versão nova. A implementação ocorreu em duas etapas. Primeiramente houve uma \gls{POC} para entender ferramentas que poderiam ser usadas. Depois ocorreu a implementação do código em si. Foi decidido que o \gls{Teste AB} seria implementado diretamente em \gls{PHP} no código da aplicação antiga, permitindo controle de separação por porcentagem de acessos e múltiplas variações para o teste.\\
 
 O código na Listagem~\ref{src:abtest} ilustra a parte principal da implementação, que verifica se a requisição \gls{HTTP} possui um \gls{cookie} de identificação do teste, ou se é necessário gerar um novo baseado nas variações e probabilidades configuradas\\
 
@@ -113,7 +115,7 @@ Outra solução importante gerada a partir do trabalho realizado foi a possibili
 
 \section{Técnicas, métodos e tecnologias envolvidas}
 
-Durante todo o período do estágio, foi utilizada metodologia de desenvolvimento \gls{SCRUM}. Os primeiros sprints tiveram duração de uma semana em um time com 5 desenvolvedores e um \gls{SCRUM} Master, que ocasionalmente realizava tarefas do sprint. Após um tempo o time decidiu adotar sprints de duas semanas, mas foi retomada a duração inicial após três sprints. Para a organização do time, são utilizadas ferramentas como \href{https://trello.com/}{Trello} para organização de tarefas, \href{https://slack.com/}{Slack} para comunicação dentro do time e \href{https://www.nuclino.com/}{Nuclino} para documentação.\\
+Durante todo o período do estágio, foi utilizada metodologia de desenvolvimento \gls{SCRUM}. Os primeiros sprints tiveram duração de uma semana em um time com 5 desenvolvedores e um \gls{SCRUM} Master, que ocasionalmente realizava tarefas do sprint. Após um tempo o time decidiu adotar sprints de duas semanas, mas foi retomada a duração inicial após três sprints. Para a organização do time, são utilizadas ferramentas como \href{https://trello.com/}{Trello} para organização de tarefas, \href{https://gitlab.com}{GitLab} para organização de código fonte, \href{https://slack.com/}{Slack} para comunicação dentro do time e \href{https://www.nuclino.com/}{Nuclino} para documentação.\\
 
 Para a infraestrutura, são usados vários serviços da \href{https://aws.amazon.com/}{\gls{AWS}}, como \href{https://aws.amazon.com/ec2/}{\gls{EC2}} para hospedagem dos serviços, \href{https://aws.amazon.com/ecr/}{\gls{ECR}} para hospedagem de imagens \gls{Docker}, \href{https://aws.amazon.com/cloudwatch/}{Cloud Watch} para monitoramento de eventos em produção e \href{https://aws.amazon.com/s3/}{\gls{S3}} para armazenamento de relatórios e backups. Também são usados vários outros serviços não ligados a Amazon, como \href{https://www.hostgator.com.br/}{Hostgator} para hospedagem da plataforma legada e \href{https://www.cloudflare.com/br/}{Cloud Flare} para gerenciamento de \gls{DNS}.\\
 
@@ -138,14 +140,28 @@ Para o desenvolvimento de novas funcionalidades, é utilizado o método \gls{TDD
 
 \section{Impacto}
 
-Quais foram as pessoas/entidades afetadas por esses resultados? Quem são  as pessoas/entidades que potencialmente serão afetadas?
+Os principais afetados diretamente pelo trabalho realizado foram os desenvolvedores e a área administrativa da empresa, que tiveram muitas tarefas diárias facilitadas e automatizadas, permitindo que pudessem utilizar seu tempo de forma mais eficiente para produzir um melhor conteúdo para os clientes.\\
 
-Fale sobre a relevância da solução do(s) problema(s) para a empresa e seu(s) cliente(s).
+Os clientes também foram afetados diretamente em algumas situações, como no caso do \gls{Teste AB}, Que disponibilizou o acesso a nova plataforma para medir seu impacto. Apesar de ainda não haver significância estatística nos dados, a Figura~\ref{fig:analytics} mostra alguns dados coletados pelo Google Analytics e a comparação entre a plataforma antiga (Monolito, em azul) e a nova (Vue, em laranja). É possível ver uma diminuição na taxa de rejeição e aumento no engajamento, mas é necessário reforçar que os dados não tem significância estatística, por causa do baixo número de visitas redirecionadas para a plataforma nova.\\
 
-Você deve omitir informações sigilosas.
+\begin{figure}[h]
+  \rule[1ex]{\textwidth}{0.25pt}
+  \centering\includegraphics[width=0.80\textwidth]{img/analytics.png}
+  \caption[Dados do Teste AB]
+  {Dados do Teste AB}\label{fig:analytics}
+  \rule[1ex]{\textwidth}{0.25pt}
+\end{figure}
 
-Discuta também sobre a relevância para sua formação a  participação na solução do(s) problema(s).
+% Quais foram as pessoas/enfoitidades afetadas por esses resultados? Quem são  as pessoas/entidades que potencialmente serão afetadas?
+%
+% Fale sobre a relevância da solução do(s) problema(s) para a empresa e seu(s) cliente(s).
+%
+% Você deve omitir informações sigilosas.
+%
+% Discuta também sobre a relevância para sua formação a  participação na solução do(s) problema(s).
 
 \section{Problemas não resolvidos}
 
-Apresente quais os problemas que não puderam ser resolvidos --- e justifique.
+Das tarefas planejadas para o estágio, poucas não puderam ser desenvolvidas. Uma delas diz respeito ao sistema de build \gls{Jenkins}. Não foi possível adicionar informações de cada build no GitLab, o que facilitaria na visualização das falhas de testes ou \gls{checkstyle}, sem a necessidade de entrar na interface do \gls{Jenkins}.\\
+
+Algumas atividades que estavam originalmente no cronograma, como a alteração da arquitetura para utilizar um padrão orientado a eventos, não foram possíveis de serem realizadas por conta de outras tarefas terem uma prioridade mais elevada.
